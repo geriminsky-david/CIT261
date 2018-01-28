@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</h1>
+
+
+<h2>Functions</h2>
+A JavaScript Function has a purpose.  Each function you create "Calls" a certain task and does something.</br>
+I have several functions in this code that use the onclick command to call the function and produce an array, variable, loop etc. for your viewing pleasure</br>
+again you need a function if you want any of your variables to actually DO something.  Especially if you want it done on command.</br>
+
+Look at this cool function!
+</br>
+	<button onclick="inputFunction()">Your Name Here</button></br>
+	<p id="inputFirstName"></p>
+</br>
+Functions have Parameters.  Parameters are all of the things you write in parens  such as </br>
+myFunction(Parameter, parameter, parameter){   };
+w3 schools says that</br></br>
+JavaScript function definitions do not specify data types for parameters.</br>
+
+JavaScript functions do not perform type checking on the passed arguments.</br>
+
+JavaScript functions do not check the number of arguments received.</br>
+	
+	</br>
+If something comes back without a parameter meaning there wasnt a user input or a variable doesnt have a value it will still pass but it is better to define it.  ex.
+</br>
+function myFunction(x, y) {</br>
+    if (y === undefined) {</br>
+          y = 0;</br>
+    } </br>
+}</br>
+	
+Everything that ends up in the parenthesis can be used natively in the Function when it is called.
+</br>
+
+<h2>Arrays</h2>
+<p>Arrays are used to store many values whether scripts, numbers, variables, another array, functions, etc.</p>
+
+</br>
+Instead of having individual variables like this
+
+</br>
+	<button onclick="variableFunction0()">Individual Variable 0 CLICK.</button>
+	<p id="demo1"> </p>
+</br>
+	<button onclick="variableFunction1()">Individual Variable 1</button>
+	<p id="demo2"></p>
+</br>
+	<button onclick="variableFunction2()">Individual Variable 2</button>
+	<p id="demo3"></p>
+</br>
+	<button onclick="variableFunction3()">Individual Variable 3</button>
+	<p id="demo4"></p>
+</br>
+
+<p>You could have one array that holds all the info and calls in one action or function</p>
+
+	<button onclick="arrayFunction1()">Array</button>
+	<p id="array1"></p>
+</br>
+
+<p>We can also access individual elements of an Array by referencing their numbers</p>
+	<button onclick="arrayFunction2()">Array Item 3</button>
+	<p id="array2"></p>
+
+<p>We can also associate certain "names" to each item in an array instead of just numbers. </p>
+
+	<button onclick="arrayFunction3()">Array First Name </button>
+	<p id="array3"></p>
+	
+	<button onclick="arrayFunction4()">Array Last Name</button>
+	<p id="array4"></p>
+
+	<button onclick="arrayFunction5()">Array Age</button>
+	<p id="array5"></p>
+
+<h2>Loops</h2>
+<p>What Loops do, are run the same code over and over again</p>
+<p>Three main types of Loops are While, for, and do.  First we will show a for loop, then a while, the a do/while loop</p>
+<p>The Main difference between a do and a while loop is that the do/while will always execute at least once.  A while loop may not execute ever if the condition is not true.</p>
+</br>
+<button onclick="loopFunction()">Loop Function ACTIVATE!!!</button>
+<p id="loop1"></p>
+
+<h2>Conditional Statements</h2>
+
+<p>We can also do something called a Switch conditional statement which takes a user input and produces a different output (executing a different block of code) depending on the input of the user.</p>
+Coke, Sprite, Coco
+<button onclick="switchFunction()">Switch Conditional</button>
+
+<p id="switchItUp"></p>
+
+<p>If Else with Time</p>
+If Statements execute if it is True, Else Executes if the first condition is False, Else if statements tell us what to do when everything else is false.
+</br>
+<button onclick="ifElseFunction()">Time is Relative</button>
+<p id="timeWarrior"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Variables and Functions Start Here-->
+<script>
+//VARIABLES and functions
+
+//INDIVIDUAL VARIABLES
+var food0 = 'pizza';
+var food1 = 'Pie';
+var food2 = 'Cola';
+var food3 = 'Bananna';
+var food4 = 'Spaghetti';
+var food5 = 'Toast';
+
+function variableFunction0() {
+    document.getElementById("demo1").innerHTML = food0;
+}
+
+function variableFunction1() {
+    document.getElementById("demo2").innerHTML = food1;
+}
+
+
+function variableFunction2() {
+    document.getElementById("demo3").innerHTML = food2;
+}
+
+
+function variableFunction3() {
+    document.getElementById("demo4").innerHTML = food3;
+}
+</script>
+
+
+
+<!--Arrays start here-->
+
+
+<script>
+//ARRAYS
+
+var foodArray = ["pizza",  "pie", "cola", "bananna", "spaghetti", "toast"];
+var foodString = foodArray.join(', ');
+function arrayFunction1()  {
+	document.getElementById("array1").innerHTML = foodString;
+
+}
+
+
+//  We can also access individual elements of an Array by referencing their numbers
+
+function arrayFunction2()  {
+	document.getElementById("array2").innerHTML = foodArray[3];
+
+}
+
+function arrayFunction3()  {
+var person = {firstName:"John", lastName:"Doe", age:46};
+
+document.getElementById("array3").innerHTML = person["firstName"];
+
+}
+
+function arrayFunction4()  {
+var person = {firstName:"John", lastName:"Doe", age:46};
+
+document.getElementById("array4").innerHTML = person["lastName"];
+
+}
+
+function arrayFunction5()  {
+var person = {firstName:"John", lastName:"Doe", age:958};
+
+document.getElementById("array5").innerHTML = person["age"];
+
+}
+
+
+
+
+</script>
+
+
+
+<!--LOOPS Start Here-->
+
+
+
+<script>
+//What Loops do is run the same code over and over again
+var text = "";
+var i;
+var x;
+
+
+//THIS Function loops through all the items in the "Food Array" and prints them.  
+//SWITCH BETEEN THIS AND WHILE and DO
+
+
+
+//This is a FOR loop
+function loopFunction()  {
+	for (i = 0; i < foodArray.length; i++) { 
+   text += foodArray[i] + "<br>";
+	}
+	
+	document.getElementById("loop1").innerHTML = text;
+}
+
+var number = 0;
+var whileOutput;
+
+
+// WHILE LOOP
+/*
+function loopFunction()  {
+while (number < 10) { 
+	text += "<br>The number is " + number;
+  
+  number++;
+	}
+
+  document.getElementById("loop1").innerHTML = text;
+
+}*/
+
+
+</script>
+
+
+<script>
+
+
+function inputFunction() {
+    var person = prompt("Please enter your name", "Mahonri Moriancumer");
+	
+    if (person != null) {
+        document.getElementById("inputFirstName").innerHTML =
+        "Hello " + person + "! How are you today?";
+    }
+}
+
+</script>
+
+<!--Conditionals-->
+<script>
+function switchFunction() {
+    var drink;
+    var favDrink = prompt("What's your favorite Beverage?", "Coke");
+    switch(favDrink) {
+        case "Coke":
+        drink = "Excellent choice. Coke is good for your soul.";
+        break;
+    case "Sprite":
+        drink = "Sprite is for weaklings!";
+        break;
+    case "Coco":
+        drink = "Really? Are you sure Coco is your favorite?";
+        break;
+        default:
+        drink = "I have never heard of that one..";
+    }
+	
+	document.getElementById("switchItUp").innerHTML = drink;
+}
+
+
+function ifElseFunction() {
+    var greeting;
+    var time = new Date().getHours();
+    if (time < 10) {
+        greeting = "Time for Battle";
+    } else if (time < 20) {
+        greeting = "Time for Poetry";
+    } else {
+        greeting = "Time to read your Scriptures!";
+    }
+document.getElementById("timeWarrior").innerHTML = greeting;
+}
+
+
+
+
+</script>
+
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+</br>
+</body>
+</html>
